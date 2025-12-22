@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@font-face {
+  font-family: sans regular;
+  src: url(/src/fonts/RethinkSans-Regular.ttf);
+}
+.sans-regular {
+  font-family: sans regular;
+  font-weight: 400;
+}
+@font-face {
+  font-family: sans medium;
+  src: url(/src/fonts/RethinkSans-Medium.ttf);
+}
+.sans-medium {
+  font-family: sans medium;
+  font-weight: 500;
+}
+@font-face {
+  font-family: semi bold;
+  src: url(/src/fonts/RethinkSans-SemiBold.ttf);
+}
+.sans-semibold {
+  font-family: semi bold;
+  font-weight: 600;
+}
+@font-face {
+  font-family: bold;
+  src: url(/src/fonts/RethinkSans-Bold.ttf);
+}
+.sans-bold {
+  font-family: bold;
+  font-weight: 700;
+}
+@font-face {
+  font-family: hanken regular;
+  src: url(/src/fonts/HankenGrotesk-Regular.ttf);
+}
+.hanken-regular {
+  font-family: hanken regular;
+  font-weight: 400;
+}
+@font-face {
+  font-family: hanken medium;
+  src: url(/src/fonts/RethinkSans-Medium.ttf);
+}
+.hanken-medium {
+  font-family: hanken medium;
+  font-weight: 500;
+}
+@font-face {
+  font-family: hanken semibold;
+  src: url(/src/fonts/HankenGrotesk-SemiBold.ttf);
+}
+.hanken-semibold{
+  font-family: hanken semibold;
+  font-weight: 600;
+}
+@media (max-width: 640px) and (min-width: 400px) {
+  .category-section {
+    padding: 40px 50px 0px 80px;
+  }
+  /* .sellers-section{
+        padding: 0px 50px 0px 80px;
+    } */
+}
+@media (max-width: 400px) and (min-width: 100px) {
+  .category-section {
+    padding: 30px 12px 0px 12px;
+  }
+  .sellers-section {
+    padding: 50px 10px 0px 10px;
+  }
+
+}
+@media (max-width: 450px) and (min-width: 100px) {
+  .holiday-card-middle-image{
+    left: 30%;
+  }
+  .seller-card-middle-image{
+    left: 33%;
+  }
+  .footer-section{
+  flex-direction: column;
+  }
+}
+
