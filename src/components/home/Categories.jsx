@@ -1,5 +1,5 @@
 import React from 'react'
-import { HiOutlineArrowLongRight } from "react-icons/hi2";
+
 const categories = [
   {
     image: '/images/gift-card.svg',
