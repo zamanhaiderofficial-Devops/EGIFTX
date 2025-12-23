@@ -3,14 +3,18 @@ import React from 'react'
 function Footer() {
     return (
         <div>
-            <div className='bg-[#262626] rounded-tr-4xl rounded-tl-4xl'>
+            <div className='bg-[#09063A] rounded-tr-4xl rounded-tl-4xl'>
                 <div className='mx-auto max-w-360'>
                     <div className='mt-20 flex px-10 sm:px-15 md:px-40 justify-between footer-section'>
                         <div className='pt-20'>
                             <h5 className='text-[30px] leading-7.5 hanken-medium text-[#CECECE]'>Join our Newsletter</h5>
-                            <div className='mt-4 flex items-center'>
-                                <button className='text-[14px] leading-5 text-[#CECECE] border border-[#E5E5E5] px-4 py-2.5 flex items-center justify-center gap-2 rounded-full hanken-medium'>Email address <img src="/images/right-small-arrow-white.svg" alt="" className='' /></button>
+                            <div className="mt-4 inline-flex rounded-full p-px bg-linear-to-r from-[#B43AED] to-[#2239FE]">
+                                <button className="text-[14px] leading-5 text-[#CECECE] px-4 py-2.5 flex items-center justify-center gap-2 rounded-full bg-[#09063A] hanken-medium">
+                                    Email address
+                                    <img src="/images/right-small-arrow-white.svg" alt="" />
+                                </button>
                             </div>
+
                             <div className='mt-12 flex flex-col gap-1'>
                                 <span className='text-[30px] leading-7.5 hanken-medium text-[#CECECE]'>Giftcards</span>
                                 <span className='text-[30px] leading-7.5 hanken-medium text-[#CECECE]'>Terms & Conditions</span>
@@ -39,11 +43,11 @@ function Footer() {
                         </div>
                     </div>
                     <div className='mt-20 flex justify-center flex-col items-center'>
-                         <div className='flex gap-6'>
+                        <div className='flex gap-6'>
                             <img src="/images/visa-payment.svg" alt="" />
                             <img src="/images/mastercard-payment.svg" alt="" />
-                         </div>
-                         <span className='hanken-regular text-[16px] leading-6 text-[#7D7D7D] mt-4 mb-6'>© 2025 egiftx. All rights reserved</span>
+                        </div>
+                        <span className='hanken-regular text-[16px] leading-6 text-[#7D7D7D] mt-4 mb-6'>© 2025 egiftx. All rights reserved</span>
                     </div>
                 </div>
             </div>
