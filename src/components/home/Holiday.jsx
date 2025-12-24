@@ -72,7 +72,7 @@ function Holiday({ isDark }) {
     return (
         <div>
             <div className='max-w-360 mx-auto'>
-                <div className=' pt-32 sm:px-30 px-10'>
+                <div className=' pt-32 sm:px-30 px-15  sellers-section'>
                     <div>
                         <h4 className={`text-[30px] leading-7.5 hanken-medium ${isDark ? "text-white" : "text-black"}`}>Holiday specials</h4>
                     </div>
@@ -83,6 +83,7 @@ function Holiday({ isDark }) {
                                     <div className='grid'>
                                         <div className='relative bg-linear-to-r from-[#7C3AED4D] from-30% to-[#2239FE99] to-60% sm:max-w-300 lg:max-w-150 xl:max-w-300 rounded-3xl overflow-hidden'>
 
+                                            {/* Background Image - responsive positioning */}
                                             <div className='absolute z-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 md:left-0 md:translate-x-0 md:top-1/12 md:translate-y-0 w-full md:w-auto'>
                                                 <img
                                                     src="/images/holiday-img.svg"
@@ -104,7 +105,7 @@ function Holiday({ isDark }) {
                         </div>
                     </div>
                     <div className='pt-22'>
-                        <div className='grid xl:grid-cols-3 lg:grid-cols-2 gap-5'>
+                        <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                             {holidayCards.map((cards, index) => {
                                 return (
                                     <a key={index} href={cards.href} className='group' >

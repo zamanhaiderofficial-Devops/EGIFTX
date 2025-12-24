@@ -38,11 +38,11 @@ function Sellers({isDark}) {
                     <div className='grid mt-6 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5.25'>
                            {sellers.map((cards, index) => {
                                 return (
-                                    <a href={cards.href} key={index} className='group'>
+                                    <a href={cards.href} key={index} className='group '>
 
-                                    <div  className={`${isDark ? "bg-[#121030]" : "bg-[#EAE9FD]"  } relative overflow-hidden rounded-[15px] min-h-69 max-w-full   w-full lg:max-w-[386.66px] h-full flex flex-col justify-between group-hover:shadow-[5px_5px_20px_0px_rgba(0,27,245,0.2)] transition-shadow duration-300`}>
+                                    <div  className={`${isDark ? "bg-[#121030]" : "bg-[#EAE9FD]"  } relative overflow-hidden rounded-[15px] min-h-69 max-w-full   w-full lg:max-w-[386.66px] h-full flex flex-col justify-between group-hover:shadow-[5px_5px_20px_0px_rgba(0,27,245,0.2)] transition-shadow duration-300 `}>
                                               <div className={`  relative mt-2.5 mx-2.5 rounded-[15px] ${isDark ? "bg-linear-to-r from-[#8A38F5] via-[#491E8C] to-[#04031D] border border-[#262463]" : "bg-linear-to-r from-[#D6B7FF] via-[#8A38F5] to-[#1E3A8A] border border-[#A1AFD6]"}`}>
-                                            <img src={cards.middleImage} className='relative py-10.5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 z-0' alt="" />
+                                            <img src={cards.middleImage} className='relative py-10.5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-90 z-0' alt="" />
                                         </div>
                                         <div className='flex items-end justify-between relative z-10 my-5 mx-7.5 '>
                                             <div className='space-y-1'>

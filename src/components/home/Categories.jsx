@@ -51,7 +51,7 @@ const categories = [
     contentMargin: 'mt-[35.12px]',
   },
 ]
-function Categories({isDark}) {
+function Categories({ isDark }) {
   return (
     <div>
       <div className='max-w-360 mx-auto'>
@@ -62,49 +62,51 @@ function Categories({isDark}) {
               return (
                 <div key={index} className='group'>
 
-                <div  className={`w-full relative z-20   rounded-[20px] overflow-hidden ${isDark ? "bg-[#09063A] group-hover:bg-[#0D0A57] transition-colors duration-300"  : "bg-[#F5F5F5]"}  `}>
+                  <div className={`w-full relative z-20   rounded-[20px] overflow-hidden ${isDark ? "bg-[#09063A] group-hover:bg-[#0D0A57] transition-colors duration-300" : "bg-[#F5F5F5]"}  `}>
 
 
-                  <div className={`absolute opacity-0 inset-0 overflow-hidden  hover:cursor-pointer z-10 rounded-[20px]  transition-all duration-700 pointer-events-none bg-linear-to-br from-[#B43AED] from-0% via-[#6628A5] via-25% to-[#0B1353] to-100%  ease-[cubic-bezier(0.16,1,0.3,1)] ${isDark ? "" : "group-hover:opacity-100"}`}></div>
-                  <div className='relative z-30'>
+                    <div className={`absolute opacity-0 inset-0 overflow-hidden  hover:cursor-pointer z-10 rounded-[20px]  transition-all duration-700 pointer-events-none bg-linear-to-br from-[#B43AED] from-0% via-[#6628A5] via-25% to-[#0B1353] to-100%  ease-[cubic-bezier(0.16,1,0.3,1)] ${isDark ? "" : "group-hover:opacity-100"}`}></div>
+                    <div className='relative z-30'>
 
-                    <div className={`flex justify-center relative 
-      ${category.padding} sm:justify-start`}>
-                      <img src={category.image} alt="" className={`${category.imageClass} transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform group-hover:scale-110`} />
-                    </div>
-                    <div className={category.contentMargin}>
-                       <div className={`${isDark ? "bg-[#0D0A57] group-hover:bg-[#09063A]" : ""}`}>
-
-                      <div className={`w-full border-t  group-hover:border-[#413AE9] ${isDark ? "border-[#413AE9]" : "border-[#DADADA]"}`} />
-                      <div className={`py-3.75 flex justify-between items-center  `}>
-
-                        <h3 className={`text-[22px] leading-7.5 sans-medium pl-5 group-hover:text-white ${isDark ? "text-white" : "text-black"}`}>
-                          {category.title}
-                        </h3>
-                        <div className="w-6.75 h-6.75 mr-[16.5px] relative">
-                          {isDark ? (
-                            <img src="/images/white-arrow.svg" alt="" className="absolute block" />
-                          ) : (
-                            <>
-                              <img
-                                src="/images/black-arrow.svg"
-                                alt=""
-                                className="absolute group-hover:hidden block"
-                              />
-                              <img
-                                src="/images/white-arrow.svg"
-                                alt=""
-                                className="absolute group-hover:block hidden"
-                              />
-                            </>
-                          )}
-                        </div>
-
+                      <div className={`flex justify-center relative 
+                            ${category.padding} sm:justify-start`}>
+                        <img src={category.image} alt="" className={`${category.imageClass} transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform group-hover:scale-110`} />
                       </div>
-                       </div>
+                      <div className={category.contentMargin}>
+                        <div className={`${isDark ? "bg-[#0D0A57] group-hover:bg-[#09063A]" : ""}`}>
+
+                          <div className={`w-full border-t  group-hover:border-[#413AE9] ${isDark ? "border-[#413AE9]" : "border-[#DADADA]"}`} />
+                          <div className={`py-3.75 flex justify-between items-center  `}>
+
+                            <h3 className={`text-[22px] leading-7.5 sans-medium pl-5 group-hover:text-white ${isDark ? "text-white" : "text-black"}`}>
+                              {category.title}
+                            </h3>
+                            <div className="w-6.75 h-6.75 mr-[16.5px] relative">
+                              {isDark ? (
+                                <img src="/images/white-arrow.svg" alt="" className="absolute block" />
+                              ) : (
+                                <>
+                                  <img
+                                    src="/images/black-arrow.svg"
+                                    alt=""
+                                    className="absolute group-hover:hidden block"
+                                  />
+                                  <img
+                                    src="/images/white-arrow.svg"
+                                    alt=""
+                                    className="absolute group-hover:block hidden"
+                                  />
+                                </>
+                              )}
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>  
+                   
+                    
                     </div>
                   </div>
-                </div>
                 </div>
               );
             })}
