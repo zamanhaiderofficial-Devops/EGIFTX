@@ -46,7 +46,7 @@ export default function Hero({ isDark, setIsDark }) {
             <div className={`fixed top-0 right-0 pb-4 left-0 z-40 bg-linear-to-r from-[#504af1] via-[#855ed1] to-[#f1afe4] rounded-bl-2xl rounded-br-2xl transition-all duration-300 ${scroll ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
               }`}>
 
-              <header className='flex items-center pt-7.5 justify-around'>
+              <header className='flex items-center pt-7.5 justify-between px-9 sm:justify-around'>
                 <div>
                   <img src="/images/logo.svg" alt="" />
                 </div>
@@ -90,7 +90,7 @@ export default function Hero({ isDark, setIsDark }) {
             </div>
 
             {/* Original header - always visible at top */}
-            <header className='flex items-center pt-7.5 justify-around'>
+            <header className='flex items-center pt-7.5 sm:justify-around justify-between px-9'>
               <div>
                 <img src="/images/logo.svg" alt="" />
               </div>
@@ -137,7 +137,7 @@ export default function Hero({ isDark, setIsDark }) {
 
               {/* Sidebar */}
               <div className={`fixed z-50 w-3/4 md:w-2/3 lg:w-1/2 bg-[#8561f1] h-screen top-0 text-white
-    transition-transform duration-500 ease-in-out
+    transition-transform duration-500 ease-in-out rounded-tl-xl
     ${toggle ? "translate-x-0" : "translate-x-full"}`}
                 style={{ right: 0 }}>
 
@@ -161,13 +161,13 @@ export default function Hero({ isDark, setIsDark }) {
 
             {/* ...........Hero........section....... */}
             <div>
-              <div className='mt-25 md:mt-35.5  ml-10 sm:pl-15 md:pl-25 flex flex-col pb-45.25 sm:mr-0 mr-2'>
+              <div className='sm:mt-25 md:mt-35.5 mt-13   ml-10 sm:pl-15 md:pl-25 flex flex-col pb-45.25 sm:mr-0 mr-2'>
                 <h5 className='md:leading-18.5 leading-15 text-[50px] md:text-[74px] text-white max-w-3xl sans-medium '>
                   Access your favourite
                   brands with us
                 </h5>
                 <p className='mt-6 text-[20px] leading-7.5 text-white max-w-3xl sans-semibold'>The smoothest way of paying everywhere.</p>
-                <div className='bg-white rounded-[117px] py-4 max-w-115 mt-6'>
+                <div className='bg-white rounded-[117px] py-4 max-w-75  sm:max-w-115 mt-6'>
                   <div className='pl-6 flex items-center gap-6'>
                     <img src="/images/search-icon.svg" alt="search" className='w-[21.36px] h-6' />
                     <input type="text" placeholder='Search brands' className='placeholder-[#4A5565] placeholder:text-[16px] placeholder:leading-6 focus:outline-none sans-regular' />
