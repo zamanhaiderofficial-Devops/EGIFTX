@@ -9,7 +9,7 @@ function App() {
       }`}>
       < BrowserRouter>
 
-        <Home isDark={isDark} setIsDark={setIsDark}/>
+        <Home isDark={isDark} setIsDark={setIsDark} />
       </BrowserRouter>
     </div>
   )
