@@ -30,9 +30,9 @@ function Sellers({isDark}) {
     return (
         <div>
             <div className='max-w-360 mx-auto'>
-                <div className='lg:px-30 md:px-10  px-15  pt-32.25 sellers-section'>
+                <div className='lg:px-30 md:px-10 px-3   pt-32.25 sellers-section'>
                     <div className='flex justify-between'>
-                    <h4 className={`sans-medium text-[28px] leading-7.5 ${isDark ? "text-white" : "text-black"}`}>Top sellers right now</h4>
+                    <h4 className={`sans-medium text-[20px] sm:text-[28px] leading-7.5 ${isDark ? "text-white" : "text-black"}`}>Top sellers right now</h4>
                        <img src={isDark ? "/images/white-arrow.svg" : "/images/black-arrow.svg" } className='h-5.75 w-5.75' alt="" />
                     </div>
                     <div className='grid mt-6 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5.25'>

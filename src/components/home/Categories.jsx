@@ -56,7 +56,7 @@ function Categories({ isDark }) {
     <div>
       <div className='max-w-360 mx-auto'>
         <div className='flex items-start sm:p-25 gap-12.25 xl:flex-row flex-col overflow-hidden category-section'>
-          <h2 className={`text-[48px] leading-12 sans-bold ${isDark ? "text-white" : "text-black"}`}>Categories</h2>
+          <h2 className={`sm:text-[48px] text-[35px] leading-12 sans-bold ${isDark ? "text-white" : "text-black"}`}>Categories</h2>
           <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-5 w-full'>
             {categories.map((category, index) => {
               return (
@@ -78,7 +78,7 @@ function Categories({ isDark }) {
                           <div className={`w-full border-t  group-hover:border-[#413AE9] ${isDark ? "border-[#413AE9]" : "border-[#DADADA]"}`} />
                           <div className={`py-3.75 flex justify-between items-center  `}>
 
-                            <h3 className={`text-[22px] leading-7.5 sans-medium pl-5 group-hover:text-white ${isDark ? "text-white" : "text-black"}`}>
+                            <h3 className={`md:text-[22px] text-[15px] leading-7.5 sans-medium pl-5 group-hover:text-white ${isDark ? "text-white" : "text-black"}`}>
                               {category.title}
                             </h3>
                             <div className="w-6.75 h-6.75 mr-[16.5px] relative">
@@ -103,7 +103,7 @@ function Categories({ isDark }) {
                           </div>
                         </div>
                       </div>  
-                   
+                  
                     
                     </div>
                   </div>

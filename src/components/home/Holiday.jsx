@@ -72,7 +72,7 @@ function Holiday({ isDark }) {
     return (
         <div>
             <div className='max-w-360 mx-auto'>
-                <div className=' pt-32 sm:px-30 px-15  sellers-section'>
+                <div className=' pt-32 lg:px-30 md:px-10 px-3'>
                     <div>
                         <h4 className={`text-[30px] leading-7.5 hanken-medium ${isDark ? "text-white" : "text-black"}`}>Holiday specials</h4>
                     </div>

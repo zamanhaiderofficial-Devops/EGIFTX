@@ -3,7 +3,7 @@ import React from 'react'
 function LastCard() {
     return (
         <div className='max-w-360 mx-auto'>
-            <div className='my-32 px-4 sm:px-6 lg:px-30'>
+            <div className='sm:my-32 my-10 px-4 sm:px-6 lg:px-30'>
                 <div className='bg-[url("/images/last-gift-card.svg")] rounded-3xl bg-cover bg-center bg-no-repeat'>
                     <div className='flex flex-col py-8 sm:py-33.75 px-4 sm:px-8 lg:px-12'>
 
