@@ -55,7 +55,7 @@ function Categories({ isDark }) {
   return (
     <div>
       <div className='max-w-360 mx-auto'>
-        <div className='flex items-start sm:p-25 gap-12.25 xl:flex-row flex-col overflow-hidden category-section'>
+        <div className='flex items-start sm:p-5 md:p-7  lg:p-25 gap-12.25 xl:flex-row flex-col overflow-hidden category-section'>
           <h2 className={`sm:text-[48px] text-[35px] leading-12 sans-bold ${isDark ? "text-white" : "text-black"}`}>Categories</h2>
           <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-5 w-full'>
             {categories.map((category, index) => {
@@ -69,7 +69,7 @@ function Categories({ isDark }) {
                     <div className='relative z-30'>
 
                       <div className={`flex justify-center relative 
-                            ${category.padding} sm:justify-start`}>
+                            ${category.padding} `}>
                         <img src={category.image} alt="" className={`${category.imageClass} transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform group-hover:scale-110`} />
                       </div>
                       <div className={category.contentMargin}>
@@ -102,9 +102,9 @@ function Categories({ isDark }) {
 
                           </div>
                         </div>
-                      </div>  
-                  
-                    
+                      </div>
+
+
                     </div>
                   </div>
                 </div>
