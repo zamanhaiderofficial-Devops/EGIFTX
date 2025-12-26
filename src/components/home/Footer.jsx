@@ -5,7 +5,7 @@ function Footer() {
         <div>
             <div className='bg-[#09063A] rounded-tr-4xl rounded-tl-4xl'>
                 <div className='mx-auto max-w-360'>
-                    <div className='mt-20 flex px-10 sm:px-15 md:px-40 justify-between footer-section'>
+                    <div className='mt-20 flex px-10 sm:px-15 md:px-30 justify-between footer-section'>
                         <div className='pt-20'>
                             <h5 className='text-[30px] leading-7.5 hanken-medium text-[#CECECE]'>Join our Newsletter</h5>
                             <div className="mt-4 inline-flex rounded-full p-px bg-linear-to-r from-[#B43AED] to-[#2239FE]">
