@@ -1,4 +1,3 @@
-import { div } from 'framer-motion/client'
 import React from 'react'
 
 const categories = [
@@ -55,7 +54,7 @@ function Categories({ isDark }) {
   return (
     <div>
       <div className='max-w-360 mx-auto'>
-        <div className='flex items-start sm:p-5 md:p-7  lg:p-25 gap-12.25 xl:flex-row flex-col overflow-hidden category-section'>
+        <div className='flex items-start sm:p-5 md:p-7 lg:px-30 lg:py-25 gap-12.25 xl:flex-row flex-col overflow-hidden category-section'>
           <h2 className={`sm:text-[48px] text-[35px] leading-12 sans-bold ${isDark ? "text-white" : "text-black"}`}>Categories</h2>
           <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-5 w-full'>
             {categories.map((category, index) => {

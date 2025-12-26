@@ -1,6 +1,4 @@
-import { a } from 'framer-motion/client'
-import React from 'react'
-
+import React from "react"
 
 const sellers = [
     {
@@ -29,6 +27,7 @@ const sellers = [
 function Sellers({ isDark }) {
     return (
         <div>
+           
             <div className='max-w-360 mx-auto'>
                 <div className='lg:px-30 md:px-10 px-3   sm:pt-32.25 pt-20 sellers-section'>
                     <div className='flex justify-between'>

@@ -47,7 +47,7 @@ export default function Hero({ isDark, setIsDark }) {
               }`}>
 
               <header className='max-w-360 mx-auto'>
-                <div className='flex items-center mt-3 justify-between px-4 md:px-10 lg:px-25 '>
+                <div className='flex items-center mt-3 justify-between px-4 md:px-10 lg:px-30 '>
 
                   <div className='sm:w-[136.4px] sm:h-[41.3px] w-[89.7px] h-[27.3px]'>
                     <img src="/images/logo.svg" alt="" />
@@ -93,7 +93,7 @@ export default function Hero({ isDark, setIsDark }) {
             </div>
 
             {/* Original header - always visible at top */}
-            <header className='flex items-center sm:pt-7.5 pt-4  justify-between lg:px-25 md:px-10 px-4'>
+            <header className='flex items-center sm:pt-7.5 pt-4  justify-between lg:px-30 md:px-10 px-4'>
               <div className='sm:w-[136.4px] sm:h-[41.3px] w-[89.7px] h-[27.3px]'>
                 <img src="/images/logo.svg" alt="" />
               </div>
@@ -165,7 +165,7 @@ export default function Hero({ isDark, setIsDark }) {
                     {
                       navLinks.map((link, index) => (
                         <Link
-                          key={link.index}
+                          key={index}
                           to={link.Link}
                           className='text-xl mt-2.5 cursor-pointer hover:text-gray-200 text-left pl-12  sans-semibold w-48'
 
@@ -182,7 +182,7 @@ export default function Hero({ isDark, setIsDark }) {
 
             {/* ...........Hero........section....... */}
             <div>
-              <div className='sm:mt-20 md:mt-35.5 mt-17 pl-4    md:pl-11 lg:pl-25 flex flex-col  pb-45.25'>
+              <div className='sm:mt-20 md:mt-35.5 mt-17 pl-4    md:pl-11 lg:pl-30 flex flex-col  pb-45.25'>
                 <h5 className='md:leading-18.5  text-[34px] leading-12  sm:text-[50px] md:text-[74px] text-white max-w-87.5   sm:max-w-3xl sans-medium '>
                   Access your favourite
                   brands with us

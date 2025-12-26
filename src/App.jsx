@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Home from "./Pages/Home"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Routes, Route  } from "react-router-dom"
 function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -8,8 +8,15 @@ function App() {
     <div className={`min-h-screen transition-colors duration-300 ${isDark ? "bg-[#04031D]" : "bg-white"
       }`}>
       < BrowserRouter>
+        <Routes>
 
-        <Home isDark={isDark} setIsDark={setIsDark} />
+
+          <Route path="/" element={<Home isDark={isDark} setIsDark={setIsDark} />} />
+
+
+        </Routes>
+
+
       </BrowserRouter>
     </div>
   )
