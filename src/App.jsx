@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Home from "./Pages/Home"
-import { BrowserRouter, Routes, Route  } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home isDark={isDark} setIsDark={setIsDark} />} />
 
 
+
         </Routes>
 
 
@@ -22,4 +24,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

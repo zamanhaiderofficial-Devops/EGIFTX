@@ -51,7 +51,7 @@
   font-family: hanken semibold;
   src: url(/src/fonts/HankenGrotesk-SemiBold.ttf);
 }
-.hanken-semibold{
+.hanken-semibold {
   font-family: hanken semibold;
   font-weight: 600;
 }
@@ -59,18 +59,22 @@
   .category-section {
     padding: 30px 10px 0px 10px;
   }
- 
 }
- @media (max-width: 400px) and (min-width: 100px) {
+@media (max-width: 400px) and (min-width: 100px) {
   .category-section {
     padding: 30px 12px 0px 12px;
   }
- 
-
-} 
+}
 @media (max-width: 450px) and (min-width: 100px) {
-  .footer-section{
-  flex-direction: column;
+  .footer-section {
+    flex-direction: column;
   }
 }
-
+/* Hide scrollbar but keep scrollable */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

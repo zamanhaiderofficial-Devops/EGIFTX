@@ -3,13 +3,15 @@ import { IoClose } from "react-icons/io5";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import ThemeSwitch from "../ThemeSwitch";
+import CartDrawer from "../CartDrawer";
 
 export default function Hero({ isDark, setIsDark }) {
   const [toggle, setToggle] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [open, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (toggle) {
+    if (toggle || open) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -19,7 +21,7 @@ export default function Hero({ isDark, setIsDark }) {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [toggle]);
+  }, [toggle, open]);
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY > 100);
@@ -76,8 +78,8 @@ export default function Hero({ isDark, setIsDark }) {
                     </div>
                     <div className='flex gap-2 items-center'>
 
-                      <div className='bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
-                        <button className=''>
+                      <div onClick={() => setIsOpen(true)} className='cursor-pointer bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
+                        <button className='cursor-pointer'>
                           <img src="/images/bucket-icon.svg" alt="Cart" className='h-5.25 w-5.25' />
                         </button>
                       </div>
@@ -119,8 +121,8 @@ export default function Hero({ isDark, setIsDark }) {
                 </div>
                 <div className='flex gap-2 items-center'>
 
-                  <div className='bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
-                    <button className=''>
+                  <div onClick={() => setIsOpen(true)} className='cursor-pointer bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
+                    <button className='cursor-pointer' >
                       <img src="/images/bucket-icon.svg" alt="Cart" className='h-5.25 w-5.25' />
                     </button>
                   </div>
@@ -180,6 +182,8 @@ export default function Hero({ isDark, setIsDark }) {
               </div>
             </>
 
+
+
             {/* ...........Hero........section....... */}
             <div>
               <div className='sm:mt-20 md:mt-35.5 mt-17 pl-4    md:pl-11 lg:pl-30 flex flex-col  pb-45.25'>
@@ -197,6 +201,9 @@ export default function Hero({ isDark, setIsDark }) {
                 </div>
               </div>
             </div>
+            {/* ..cart...drawer..... */}
+
+            <CartDrawer open={open} onClose={() => setIsOpen(false)} />
           </div>
         </div>
       </section>
