@@ -214,7 +214,7 @@ function CartDrawer({ open, onClose }) {
                   <button className="bg-transparent border border-[dark grey] rounded-[10px] px-[78.5px] py-[12.5px]">
                     <span className="text-[20px] text-[#262626] leading-7.5 sans-semibold whitespace-nowrap">View cart</span>
                   </button>
-                  <button className="bg-[#413AE9] border border-[#413AE9] rounded-[10px] px-[78.5px] py-[12.5px]">
+                  <button className="bg-[#413AE9] border border-[#413AE9] rounded-[10px] px-5.75 py-[12.5px]">
                     <span className="text-[20px] text-white leading-7.5 sans-semibold whitespace-nowrap">Checkout (€5-€100)</span>
                   </button>
                 </div>
