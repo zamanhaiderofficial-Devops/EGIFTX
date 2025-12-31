@@ -10,15 +10,15 @@ export default function Hero({ isDark, setIsDark }) {
   const [scroll, setScroll] = useState(false);
   const [open, setIsOpen] = useState(false);
 
- 
+
   useEffect(() => {
     if (toggle || open) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      
+
       // Prevent body scroll and compensate for scrollbar
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = `${scrollbarWidth}px`;
-      
+
       // Add padding to sticky header (only if cart is open)
       if (open) {
         const stickyHeader = document.querySelector('[data-sticky-header]');
@@ -30,7 +30,7 @@ export default function Hero({ isDark, setIsDark }) {
       // Restore body scroll
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
-      
+
       // Remove padding from sticky header
       const stickyHeader = document.querySelector('[data-sticky-header]');
       if (stickyHeader) {
@@ -42,7 +42,7 @@ export default function Hero({ isDark, setIsDark }) {
     return () => {
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
-      
+
       const stickyHeader = document.querySelector('[data-sticky-header]');
       if (stickyHeader) {
         stickyHeader.style.paddingRight = '';
@@ -232,7 +232,7 @@ export default function Hero({ isDark, setIsDark }) {
             </div>
             {/* ..cart...drawer..... */}
 
-            <CartDrawer open={open} onClose={() => setIsOpen(false)} />
+            <CartDrawer isDark={isDark} setIsDark={setIsDark} open={open} onClose={() => setIsOpen(false)} />
           </div>
         </div>
       </section>
