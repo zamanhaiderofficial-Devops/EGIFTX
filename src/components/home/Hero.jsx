@@ -10,18 +10,46 @@ export default function Hero({ isDark, setIsDark }) {
   const [scroll, setScroll] = useState(false);
   const [open, setIsOpen] = useState(false);
 
+ 
   useEffect(() => {
     if (toggle || open) {
-      document.body.style.overflow = "hidden";
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      // Prevent body scroll and compensate for scrollbar
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      
+      // Add padding to sticky header (only if cart is open)
+      if (open) {
+        const stickyHeader = document.querySelector('[data-sticky-header]');
+        if (stickyHeader) {
+          stickyHeader.style.paddingRight = `${scrollbarWidth}px`;
+        }
+      }
     } else {
-      document.body.style.overflow = "auto";
+      // Restore body scroll
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      
+      // Remove padding from sticky header
+      const stickyHeader = document.querySelector('[data-sticky-header]');
+      if (stickyHeader) {
+        stickyHeader.style.paddingRight = '';
+      }
     }
 
-
+    // Cleanup on unmount
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      
+      const stickyHeader = document.querySelector('[data-sticky-header]');
+      if (stickyHeader) {
+        stickyHeader.style.paddingRight = '';
+      }
     };
-  }, [toggle, open]);
+  }, [toggle, open]); // **UPDATED - Watch both toggle and open**
+
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY > 100);
@@ -29,6 +57,7 @@ export default function Hero({ isDark, setIsDark }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const navLinks = [
     { name: 'Entertainment', Link: '' },
     { name: 'Gaming', Link: '' },
@@ -45,7 +74,7 @@ export default function Hero({ isDark, setIsDark }) {
           }`}>
           <div className='max-w-360 mx-auto'>
             {/* Sticky header on scroll */}
-            <div className={`fixed top-0 right-0 pb-1 left-0 z-40 bg-linear-to-r from-[#504af1] via-[#855ed1] to-[#f1afe4] rounded-bl-2xl rounded-br-2xl transition-all duration-300   ${scroll ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+            <div data-sticky-header className={`fixed top-0 right-0 pb-1 left-0 z-40 bg-linear-to-r from-[#504af1] via-[#855ed1] to-[#f1afe4] rounded-bl-2xl rounded-br-2xl transition-transform duration-300   ${scroll ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
               }`}>
 
               <header className='max-w-360 mx-auto'>

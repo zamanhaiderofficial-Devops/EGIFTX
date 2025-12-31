@@ -106,7 +106,9 @@
 // export default CartDrawer
 import React from 'react'
 
+
 function CartDrawer({ open, onClose }) {
+ 
   return (
     <div>
       {/* ....................CART DRAWER................ */}
@@ -120,7 +122,7 @@ function CartDrawer({ open, onClose }) {
 
         {/* Drawer */}
         <div
-          className={`bg-[#F8F8FF] w-full max-w-100 sm:max-w-140 2xl:max-w-170 h-screen fixed z-60 transition-transform duration-500 ease-in-out top-0 ${open ? "translate-x-0" : "translate-x-full"
+          className={`bg-[#F8F8FF] w-full max-w-100 sm:max-w-140  h-screen fixed z-60 transition-transform duration-500 ease-in-out top-0 ${open ? "translate-x-0" : "translate-x-full"
             }`}
           style={{ right: 0 }}
         >
@@ -138,7 +140,7 @@ function CartDrawer({ open, onClose }) {
             </div>
 
             {/* ...........Scrollable content starts here............ */}
-            <div className="overflow-y-auto flex-1 space-y-8">
+            <div className="overflow-y-auto flex-1 space-y-8 scrollbar-hide">
               {/* ..............Promo banner................ */}
               <div className="bg-linear-to-r from-[#B43AED] to-[#2239FE] px-10 sm:px-23.5 py-4 mt-[43.1px] rounded-[10px]">
                 <h5 className="text-[#F5F5F5] text-[15px] sm:text-[20px] sans-semibold leading-7.5 whitespace-nowrap text-center">
@@ -210,11 +212,11 @@ function CartDrawer({ open, onClose }) {
                 </div>
 
                 {/* ....buttons (View Cart / Checkout).......... */}
-                <div className="mt-6 flex sm:gap-6 justify-between  sm:flex-row flex-col sm:space-y-0 space-y-3">
-                  <button className="bg-transparent border border-[dark grey] rounded-[10px] px-[78.5px] py-[12.5px] 2xl:px-25">
+                <div className="mt-6 flex justify-between     sm:flex-row flex-col sm:space-y-0 space-y-3">
+                  <button className="bg-transparent border border-[dark grey] rounded-[10px] px-[78.5px] py-[12.5px]">
                     <span className="text-[20px] text-[#262626] leading-7.5 sans-semibold whitespace-nowrap">View cart</span>
                   </button>
-                  <button className="bg-[#413AE9] border border-[#413AE9] rounded-[10px] px-5.75 py-[12.5px] 2xl:px-8">
+                  <button className="bg-[#413AE9] border border-[#413AE9] rounded-[10px] px-5.75 py-[12.5px]">
                     <span className="text-[20px] text-white leading-7.5 sans-semibold whitespace-nowrap">Checkout (€5-€100)</span>
                   </button>
                 </div>
