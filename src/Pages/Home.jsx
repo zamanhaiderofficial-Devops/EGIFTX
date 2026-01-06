@@ -20,4 +20,4 @@ function Home({isDark,setIsDark}) {
   )
 }
 
-export default Home
+export default Home;

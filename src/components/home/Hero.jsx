@@ -3,52 +3,26 @@ import { IoClose } from "react-icons/io5";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import ThemeSwitch from "../ThemeSwitch";
-import CartDrawer from "../CartDrawer";
+import { navLinks } from "../navLinks";
 
 export default function Hero({ isDark, setIsDark }) {
   const [toggle, setToggle] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [open, setIsOpen] = useState(false);
-
 
   useEffect(() => {
-    if (toggle || open) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (toggle) {
 
-      // Prevent body scroll and compensate for scrollbar
       document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
 
-      // Add padding to sticky header (only if cart is open)
-      if (open) {
-        const stickyHeader = document.querySelector('[data-sticky-header]');
-        if (stickyHeader) {
-          stickyHeader.style.paddingRight = `${scrollbarWidth}px`;
-        }
-      }
     } else {
       // Restore body scroll
       document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-
-      // Remove padding from sticky header
-      const stickyHeader = document.querySelector('[data-sticky-header]');
-      if (stickyHeader) {
-        stickyHeader.style.paddingRight = '';
-      }
     }
-
     // Cleanup on unmount
     return () => {
       document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-
-      const stickyHeader = document.querySelector('[data-sticky-header]');
-      if (stickyHeader) {
-        stickyHeader.style.paddingRight = '';
-      }
     };
-  }, [toggle, open]); // **UPDATED - Watch both toggle and open**
+  }, [toggle]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,12 +32,7 @@ export default function Hero({ isDark, setIsDark }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Entertainment', Link: '' },
-    { name: 'Gaming', Link: '' },
-    { name: 'Shopping', Link: '' },
-    { name: 'Travel', Link: '' },
-  ]
+
   return (
     <div>
       <section className=''>
@@ -106,12 +75,13 @@ export default function Hero({ isDark, setIsDark }) {
                       </div>
                     </div>
                     <div className='flex gap-2 items-center'>
-
-                      <div onClick={() => setIsOpen(true)} className='cursor-pointer bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
-                        <button className='cursor-pointer'>
-                          <img src="/images/bucket-icon.svg" alt="Cart" className='h-5.25 w-5.25' />
-                        </button>
-                      </div>
+                      <Link to="/cart">
+                        <div className='cursor-pointer bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
+                          <button className='cursor-pointer'>
+                            <img src="/images/bucket-icon.svg" alt="Cart" className='h-5.25 w-5.25' />
+                          </button>
+                        </div>
+                      </Link>
                       <AiOutlineMenu
                         onClick={() => setToggle(!toggle)}
                         className="text-white text-2xl cursor-pointer lg:hidden flex" />
@@ -149,12 +119,14 @@ export default function Hero({ isDark, setIsDark }) {
                   </div>
                 </div>
                 <div className='flex gap-2 items-center'>
+                  <Link to="/cart">
 
-                  <div onClick={() => setIsOpen(true)} className='cursor-pointer bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
-                    <button className='cursor-pointer' >
-                      <img src="/images/bucket-icon.svg" alt="Cart" className='h-5.25 w-5.25' />
-                    </button>
-                  </div>
+                    <div className='cursor-pointer bg-linear-to-r from-[#B43AED] to-[#100F0F] rounded-[300px] py-[12.25px] px-[13.13px] flex items-center justify-center'>
+                      <button className='cursor-pointer' >
+                        <img src="/images/bucket-icon.svg" alt="Cart" className='h-5.25 w-5.25' />
+                      </button>
+                    </div>
+                  </Link>
                   <AiOutlineMenu
                     onClick={() => setToggle(!toggle)}
                     className="text-white text-2xl cursor-pointer lg:hidden flex" />
@@ -232,7 +204,7 @@ export default function Hero({ isDark, setIsDark }) {
             </div>
             {/* ..cart...drawer..... */}
 
-            <CartDrawer isDark={isDark} setIsDark={setIsDark} open={open} onClose={() => setIsOpen(false)} />
+            {/* <CartDrawer isDark={isDark} setIsDark={setIsDark} open={open} onClose={() => setIsOpen(false)} /> */}
           </div>
         </div>
       </section>
