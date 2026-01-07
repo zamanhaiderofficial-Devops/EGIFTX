@@ -1,18 +1,20 @@
-import { React, useState, useMemo,useEffect } from 'react'
+import { React, useState, useMemo, } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const payment = [
   {
     image: '/images/payment-card-icon.svg',
-    method: 'card',
-    padding: 'py-4'
+    darkImage: '/images/payment-card-icon-dark.svg',
+    padding: 'py-4',
   },
   {
     image: '/images/paypal-payment.svg',
+    darkImage: '/images/paypal-payment-dark.svg',
     padding: 'py-[21px]'
   },
   {
     image: '/images/googlepay-payment.svg',
+    darkImage: '/images/googlepay-payment-dark.svg',
     padding: 'py-[23px]'
   }
 ]
@@ -22,9 +24,9 @@ function CartDrawer({ isDark }) {
   const Navigate = useNavigate();
   //   useEffect(() => {
   //   if (isOpen) {
-      
+
   //     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      
+
   //     document.body.style.paddingRight = `${scrollbarWidth}px`;
   //   } else {
   //     document.body.style.paddingRight = '0px';
@@ -41,21 +43,21 @@ function CartDrawer({ isDark }) {
       id: 1,
       name: "App Store & iTunes",
       image: "/images/product-img-model.svg",
-      basePrice: 100, 
+      basePrice: 100,
       quantity: 1
     },
     {
       id: 2,
       name: "Google Play Card",
       image: "/images/product-img-model.svg",
-      basePrice: 50, 
+      basePrice: 50,
       quantity: 2
     },
     {
       id: 3,
       name: "PlayStation Store",
       image: "/images/product-img-model.svg",
-      basePrice: 75, 
+      basePrice: 75,
       quantity: 1
     }
   ]);
@@ -83,16 +85,16 @@ function CartDrawer({ isDark }) {
 
   // Handle increase quantity
   const increaseQuantity = (productId) => {
-    setProducts(products.map(product => 
-      product.id === productId 
+    setProducts(products.map(product =>
+      product.id === productId
         ? { ...product, quantity: product.quantity + 1 }
         : product
     ));
-  };  
+  };
 
   // Handle decrease quantity
   const decreaseQuantity = (productId) => {
-    setProducts(products.map(product => 
+    setProducts(products.map(product =>
       product.id === productId && product.quantity > 1
         ? { ...product, quantity: product.quantity - 1 }
         : product
@@ -142,7 +144,7 @@ function CartDrawer({ isDark }) {
                                 <div className="flex items-center gap-1">
                                   {/* onClick handler for decrease */}
                                   <button onClick={() => decreaseQuantity(product.id)} className={`p-1 ${isDark ? "hidden" : "block"}`}>
-                                    <img src={product.quantity <=1 ? "/images/quantity-decrease-button.svg" : "/images/quantity-decrease-enable-button.svg"} className="h-6 w-6" alt="" />
+                                    <img src={product.quantity <= 1 ? "/images/quantity-decrease-button.svg" : "/images/quantity-decrease-enable-button.svg"} className="h-6 w-6" alt="" />
                                   </button>
                                   <button onClick={() => decreaseQuantity(product.id)} className={`p-1 ${isDark ? "block" : "hidden"}`}>
                                     <img src={product.quantity <= 1 ? "/images/quantity-decrease-button-dark-mode.svg" : "/images/quantity-decrease-button-dark-mode-enable.svg"} className="h-6 w-6" alt="" />
@@ -167,7 +169,7 @@ function CartDrawer({ isDark }) {
 
                             {/* .........price would be available and displayed here ...... */}
                             <div className="mt-2">
-                              {/* 🟢 Changed: Now displays basePrice × quantity for total product price */}
+                              {/* basePrice × quantity for total product price */}
                               <span className={`sans-medium text-[22px] leading-7.5 ${isDark ? "text-[#9577F1]" : "text-[#413AE9]"}`}>
                                 €{product.basePrice * product.quantity}
                               </span>
@@ -181,100 +183,101 @@ function CartDrawer({ isDark }) {
               </div>
             </div>
             {/* .....order summary and payment details are here ..... */}
-            <div className='border border-[#DADADA] w-full xl:max-w-158.25 rounded-2xl'>
+            <div className={`border  w-full xl:max-w-158.25 rounded-2xl ${isDark ? "border-[#2E2979] bg-[#161437]" : "border-[#DADADA] bg-[#FFFFFF]"}`}>
               <div className='flex flex-col mt-7.5 px-4 sm:px-7.5 mb-7.5'>
-                <h5 className='sans-medium text-[22px] leading-7.5'>Order Summary</h5>
-                <div className='border border-t-[#262626] mt-4'></div>
-                
+                <h5 className={`sans-medium text-[22px] leading-7.5 ${isDark ? "text-white" : "text-black"}`}>Order Summary</h5>
+                <div className={`border mt-4 ${isDark ? "border-t-[#2E2979]" : " border-t-[#262626]"}`}></div>
+
                 {/*  Subtotal  calculated dynamically */}
                 <div className='flex justify-between mt-6'>
-                  <p className='sans-regular leading-6 text-[16px]'>Subtotal</p>
-                  <span className='sans-regular text-[16px] leading-6 text-[#413AE9]'>€{subtotal}</span>
+                  <p className={`sans-regular leading-6 text-[16px] ${isDark ? "text-white" : "text-black"}`}>Subtotal</p>
+                  <span className={`${isDark ? "text-[#B68FF5]" : "text-[#413AE9]"} sans-regular text-[16px] leading-6 `}>€{subtotal}</span>
                 </div>
-                
+
                 {/* Delivery Fee - Fixed */}
                 <div className='flex justify-between mt-6'>
-                  <p className='sans-regular leading-6 text-[16px]'>Delivery Fee</p>
-                  <span className='sans-regular text-[16px] leading-6 text-[#413AE9]'>€{deliveryFee}</span>
+                  <p className={`sans-regular leading-6 text-[16px] ${isDark ? "text-white" : "text-black"}`}>Delivery Fee</p>
+                  <span className={`sans-regular text-[16px] leading-6  ${isDark ? "text-[#B68FF5]" : "text-[#413AE9]"}`}>€{deliveryFee}</span>
                 </div>
-                
-                <div className='border-t border-b border-t-[#DADADA] border-b-[#DADADA] mt-6'>
+
+                <div className={`border-t border-b  mt-6 ${isDark ? "border-t-[#2E2979] border-b-[#2E2979]" : "border-t-[#DADADA] border-b-[#DADADA]"}`}>
                   {/* Tax - Fixed */}
                   <div className='flex justify-between py-1.75'>
-                    <p className='sans-regular leading-6 text-[16px]'>Tax</p>
-                    <span className='sans-regular text-[16px] leading-6 text-[#413AE9]'>€{tax}</span>
+                    <p className={`sans-regular leading-6 text-[16px] ${isDark ? "text-white" : "text-black"}`}>Tax</p>
+                    <span className={`sans-regular text-[16px] leading-6  ${isDark ? "text-[#B68FF5]" : "text-[#413AE9]"}`}>€{tax}</span>
                   </div>
                 </div>
-                
+
                 {/*  Total  calculated dynamically */}
                 <div className='flex justify-between mt-6'>
-                  <p className='sans-semibold leading-7.5 text-[20px]'>Total</p>
-                  <span className='sans-regular text-[16px] leading-6 text-[#413AE9]'>€{total}</span>
+                  <p className={`sans-semibold leading-7.5 text-[20px] ${isDark ? "text-white" : "text-black"}`}>Total</p>
+                  <span className={`sans-regular text-[16px] leading-6  ${isDark ? "text-[#B68FF5]" : "text-[#413AE9]"}`}>€{total}</span>
                 </div>
-                
-                <div className='border-t border-t-[#DADADA] mt-7.5'></div>
+
+                <div className={`border-t mt-7.5 ${isDark ? " border-t-[#2E2979]" : " border-t-[#DADADA]"}`}></div>
 
                 <div className='flex justify-between mt-5 items-center'>
-                  <p className='sans-semibold leading-7.5 text-[20px]'>Payment method</p>
+                  <p className={`sans-semibold leading-7.5 text-[20px] ${isDark ? "text-white" : "text-black"}`}>Payment method</p>
                   {/* ...this arrow is used to hide and show other details below it..... */}
                   <div onClick={() => setIsOpen(!isOpen)} className=''>
-                    <img src="/images/drop-down-arrow-black.svg" className={`cursor-pointer transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`} alt="" />
+                    <img src={` ${isDark ? "/images/drop-down-arrow-white.svg" : "/images/drop-down-arrow-black.svg"} `} className={`cursor-pointer  transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`} alt="" />
                   </div>
                 </div>
 
                 {/* ...hide show content on button click... */}
                 {isOpen && (
                   <>
+                    {/* paymetn cards ways.... */}
+                    <div className='flex flex-wrap sm:flex-nowrap gap-3.75 mt-7.5'>
+                      {payment.map((method, index) => {
+                        return (
+                          <div key={index} className={` ${isDark ? "bg-[#231F65] border-[#2E2979]" : "bg-[#F5F5F5] border-[#DADADA]"} ${method.padding} px-3 w-full sm:w-45.25 border  rounded-[7px] flex  items-center`}>
+                            <img src={isDark ? method.darkImage : method.image} className='' alt="" />
+                          </div>
+                        )
+                      })}
+                    </div>
                     <div className='flex flex-wrap sm:flex-nowrap mt-7.5 gap-[7.5px]'>
-                      <div className="relative w-full bg-[#F5F5F5] py-4 px-3 sm:max-w-69.5 rounded-[50px]">
+                      <div className={`relative w-full py-4 px-3 sm:max-w-69.5 rounded-[50px] ${isDark ? "bg-[#231F65]" : "bg-[#F5F5F5]"}`}>
                         <input
                           type="text"
                           placeholder="Card number"
-                          className="w-full bg-transparent sans-medium text-[14px] leading-6 text-[#7A7A7A] rounded-md focus:outline-none"
+                          className={`w-full bg-transparent sans-medium text-[14px] leading-6  rounded-md focus:outline-none ${isDark ? "text-white placeholder-white" : "text-[#7A7A7A] placeholder-[#7A7A7A]"}`}
                         />
                         <img
-                          src="/images/card-number-lock-grey.svg"
-                          alt="card"
+                          src={`${isDark ? "/images/card-number-lock-white.svg" : "/images/card-number-lock-grey.svg"}`}
+                          alt="lock icon"
                           className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 pointer-events-none"
                         />
                       </div>
                       <div className="flex w-full sm:w-auto gap-[7.5px]">
-                        <div className="relative w-full bg-[#F5F5F5] py-4 px-5 sm:max-w-37.5 rounded-[50px]">
+                        <div className={`relative w-full  py-4 px-5 sm:max-w-37.5 rounded-[50px] ${isDark ? "bg-[#231F65]" : "bg-[#F5F5F5]"}`}>
                           <input
                             type="text"
                             placeholder="Expiry date"
-                            className="w-full bg-transparent focus:outline-none sans-medium text-[14px] leading-6 text-[#7A7A7A] rounded-md"
+                            className={`w-full bg-transparent focus:outline-none sans-medium text-[14px] leading-6  rounded-md ${isDark ? "placeholder-white text-white" : "placeholder-[#7A7A7A] text-[#7A7A7A]"}`}
                           />
                         </div>
-                        <div className="relative w-full bg-[#F5F5F5] py-4 px-3 sm:max-w-32.5 rounded-[50px]">
+                        <div className={`relative w-full py-4 px-3 sm:max-w-32.5 rounded-[50px] ${isDark ? "bg-[#231F65]" : "bg-[#F5F5F5]"}`}>
                           <input
                             type="text"
                             placeholder="CVV"
-                            className="w-full bg-transparent focus:outline-none sans-medium text-[14px] leading-6 text-[#7A7A7A] rounded-md"
+                            className={`w-full bg-transparent focus:outline-none sans-medium text-[14px] leading-6 rounded-md ${isDark ? "placeholder-white text-white" : "placeholder-[#7A7A7A] text-[#7A7A7A]"}`}
                           />
                           <img
-                            src="/images/card-number-lock-grey.svg"
-                            alt="card"
+                            src={`${isDark ? "/images/card-number-lock-white.svg" : "/images/card-number-lock-grey.svg"}`}
+                            alt="lock icon"
                             className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 pointer-events-none"
                           />
                         </div>
                       </div>
                     </div>
 
-                    <div className='flex flex-wrap sm:flex-nowrap gap-3.75 mt-7.5'>
-                      {payment.map((method, index) => {
-                        return (
-                          <div key={index} className={`bg-[#F5F5F5] ${method.padding} px-3 w-full sm:w-45.25 border border-[#DADADA] rounded-[7px] flex justify-center items-center`}>
-                            <img src={method.image} className='' alt="" />
-                          </div>
-                        )
-                      })}
-                    </div>
-                    <div className="relative w-full bg-[#F5F5F5] py-4 px-3 mt-7.5 rounded-[50px]">
+                    <div className={`relative w-full py-4 px-3 mt-7.5 rounded-[50px] ${isDark ? "bg-[#231F65]" : "bg-[#F5F5F5]"}`}>
                       <input
                         type="text"
                         placeholder="Card holder name"
-                        className="w-full bg-transparent focus:outline-none sans-medium text-[14px] leading-6 text-[#7A7A7A] rounded-md"
+                        className={`w-full bg-transparent focus:outline-none sans-medium text-[14px] leading-6  rounded-md ${isDark ? "placeholder-white text-white" : "placeholder-[#7A7A7A] text-[#7A7A7A]"}`}
                       />
                     </div>
                     <div className="mt-7.5">
@@ -283,7 +286,7 @@ function CartDrawer({ isDark }) {
                           type="checkbox"
                           className="w-4 h-4 accent-blue-500"
                         />
-                        <span className="text-[14px] leading-6 text-[#7A7A7A] sans-medium">
+                        <span className={`text-[14px] leading-6  sans-medium ${isDark ? "text-white" : "text-[#7A7A7A]"}`}>
                           Remember details for faster checkout
                         </span>
                       </label>
