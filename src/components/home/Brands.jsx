@@ -67,9 +67,9 @@ function Brands({isDark}) {
           animation: scroll 10s linear infinite;
         }
 
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
+        // .animate-scroll:hover {
+        //   animation-play-state: paused;
+        // }
 
         /* Responsive box sizes */
         @media (min-width: 640px) {

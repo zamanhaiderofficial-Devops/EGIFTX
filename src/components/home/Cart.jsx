@@ -1,4 +1,4 @@
-import { React, useState, useMemo, } from 'react'
+import { React, useState, useMemo,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const payment = [
@@ -22,20 +22,20 @@ const payment = [
 function CartDrawer({ isDark }) {
   const [isOpen, setIsOpen] = useState(false);
   const Navigate = useNavigate();
-  //   useEffect(() => {
-  //   if (isOpen) {
+    useEffect(() => {
+    if (isOpen) {
 
-  //     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-  //     document.body.style.paddingRight = `${scrollbarWidth}px`;
-  //   } else {
-  //     document.body.style.paddingRight = '0px';
-  //   }
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.paddingRight = '0px';
+    }
 
-  //   return () => {
-  //     document.body.style.paddingRight = '0px';
-  //   };
-  // }, [isOpen]);
+    return () => {
+      document.body.style.paddingRight = '0px';
+    };
+  }, [isOpen]);
 
   // ....sample products...
   const [products, setProducts] = useState([
@@ -183,7 +183,7 @@ function CartDrawer({ isDark }) {
               </div>
             </div>
             {/* .....order summary and payment details are here ..... */}
-            <div className={`border  w-full xl:max-w-158.25 rounded-2xl ${isDark ? "border-[#2E2979] bg-[#161437]" : "border-[#DADADA] bg-[#FFFFFF]"}`}>
+            <div className={`border  w-full   xl:max-w-158.25 rounded-2xl ${isDark ? "border-[#2E2979] bg-[#161437]" : "border-[#DADADA] bg-[#FFFFFF]"}`}>
               <div className='flex flex-col mt-7.5 px-4 sm:px-7.5 mb-7.5'>
                 <h5 className={`sans-medium text-[22px] leading-7.5 ${isDark ? "text-white" : "text-black"}`}>Order Summary</h5>
                 <div className={`border mt-4 ${isDark ? "border-t-[#2E2979]" : " border-t-[#262626]"}`}></div>
